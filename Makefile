@@ -9,5 +9,4 @@ test:
 	python -m pytest -vv test_celerec.py
 
 
-
 all: install lint test
