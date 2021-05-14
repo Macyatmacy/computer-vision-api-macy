@@ -1,2 +1,3 @@
 # computer-vision-api-macy
-this is a repo for a workshop
+This is a repo for a workshop using Amazon Rekognition to do celebrity detection.
+
