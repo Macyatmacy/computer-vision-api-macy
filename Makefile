@@ -10,4 +10,4 @@ test:
 
 
 
-all: install lint 
+all: install lint test
