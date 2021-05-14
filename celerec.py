@@ -1,9 +1,12 @@
+#!/usr/bin/env python3
+
 import boto3
 import click
 
 @click.command(help="This tool does celebrity detection")
-@click.option('--file', prompt='I need the name of the file in the bucket',
+@click.option('--file', default="queen.jpg", prompt='I need the name of the file in the bucket',
               help='This is the name of the file in the bucket')
+
 
 def recognize_celebrities(file):
 
@@ -19,8 +22,7 @@ def recognize_celebrities(file):
         },
     )
     click.echo(click.style(f"Detecting Celebrities for: {file}", fg="red"))
-
-    # print('Detected faces for ' + photo)    
+    
     for celebrity in response['CelebrityFaces']:
         print ('Name: ' + celebrity['Name'])
         print ('Id: ' + celebrity['Id'])
@@ -30,8 +32,7 @@ def recognize_celebrities(file):
         print ('Info')
         for url in celebrity['Urls']:
             print ('   ' + url)
-        
-    return len(response['CelebrityFaces'])
+        return celebrity['Name']
 
 if __name__ == '__main__':
     # pylint: disable=E1120

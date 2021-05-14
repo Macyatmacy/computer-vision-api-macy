@@ -4,5 +4,10 @@ install:
 
 lint:
 	pylint --disable=R,C  celerec.py
+	
+test:
+	python -m pytest -vv test_celerec.py
+
+
 
 all: install lint 
