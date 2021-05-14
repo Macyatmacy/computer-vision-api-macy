@@ -9,8 +9,6 @@ import click
 
 
 def recognize_celebrities(file):
-
-    
     client=boto3.client('rekognition')
 
     response = client.recognize_celebrities(
@@ -21,6 +19,7 @@ def recognize_celebrities(file):
             },
         },
     )
+    
     click.echo(click.style(f"Detecting Celebrities for: {file}", fg="red"))
     
     for celebrity in response['CelebrityFaces']:
