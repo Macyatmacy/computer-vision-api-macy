@@ -4,7 +4,7 @@ import boto3
 import click
 
 @click.command(help="This tool does celebrity detection")
-@click.option('--file', default="queen.jpg", prompt='I need the name of the file in the bucket',
+@click.option('--file', prompt='I need the name of the file in the bucket',
               help='This is the name of the file in the bucket')
 
 
